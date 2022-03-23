@@ -51,7 +51,7 @@ oc adm policy add-cluster-role-to-user admin system:serviceaccount:openshift-git
 
 ## deploy tekton chains
 
-You need OpenShift piplelines / Tekton deployed already.
+You need OpenShift piplelines / Tekton deployed already. Update CLUSTER_DOMAIN in kustomize yaml then run
 
 ```bash
 kustomize build tekton-chains | oc apply -f-
