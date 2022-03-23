@@ -108,13 +108,13 @@ Verify the signature
 cosign verify-blob --key k8s://tekton-chains/signing-secrets --signature ./signature ./payload
 ```
 
-See the raw Annotation
+See the raw Attestation
 
 ```bash
 curl https://rekor-server.apps.openshift-410-kwlrb.demo.redhatlabs.dev/api/v1/log/entries?logIndex=8
 ```
 
-Decode Annotation
+Decode Attestation
 
 ```bash
 rekor-cli  --rekor_server=https://rekor-server.apps.openshift-410-kwlrb.demo.redhatlabs.dev get --log-index=8 --format json | jq -r .Attestation | base64 -d | yq -P e -
